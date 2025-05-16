@@ -5,16 +5,27 @@ When we type a URL like `https://www.google.com` into our browser and press Ente
 ## 🧠 Request Flow Diagram
 
 ```mermaid
-graph TD
-    A[User types https://www.google.com in browser] --> B[DNS resolution: Get IP address]
-    B --> C[Firewall: Allow outbound HTTPS traffic (port 443)]
-    C --> D[Encrypted HTTPS request to Load Balancer]
-    D --> E[Load Balancer distributes request]
-    E --> F[Web Server receives request]
-    F --> G[Web Server contacts Application Server]
-    G --> H[Application Server queries Database]
-    H --> I[Database returns data]
-    I --> J[Application Server generates web page]
-    J --> K[Web Server serves HTML page]
-    K --> L[Browser displays Google homepage]
-```
+sequenceDiagram
+    participant User as User
+    participant Browser as Browser
+    participant DNS as DNS Server
+    participant FW as Firewall
+    participant LB as Load Balancer
+    participant WS as Web Server
+    participant AS as Application Server
+    participant DB as Database
+
+    User->>Browser: Type https://www.google.com
+    Browser->>DNS: Resolve domain name
+    DNS-->>Browser: Return IP address
+    Browser->>FW: Send HTTPS request (port 443)
+    FW-->>Browser: Allow request
+    Browser->>LB: Encrypted request (HTTPS)
+    LB->>WS: Forward request
+    WS->>AS: Ask for page generation
+    AS->>DB: Query for data
+    DB-->>AS: Return data
+    AS-->>WS: Generated HTML page
+    WS-->>Browser: Serve HTML response
+    Browser-->>User: Display Google homepage
+    
