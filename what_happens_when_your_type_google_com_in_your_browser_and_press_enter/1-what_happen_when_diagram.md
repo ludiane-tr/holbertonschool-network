@@ -17,4 +17,3 @@ graph TD
     I --> J[Application Server generates web page]
     J --> K[Web Server serves HTML page]
     K --> L[Browser displays Google homepage]
-
