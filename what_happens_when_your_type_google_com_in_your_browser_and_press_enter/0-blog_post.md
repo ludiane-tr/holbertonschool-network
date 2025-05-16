@@ -1,6 +1,7 @@
 # What's Happening When You Type `google.com` in Your Browser and Press Enter?
 
-![Description google image 1](C:\Users\LUDZ\Desktop\Holberton/1716068179500.png)  
+![Google homepage](https://media.licdn.com/dms/image/v2/D4D12AQE2WRLZL6KJSA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1676283849130?e=1752710400&v=beta&t=YRdnIVnOYuvQlIlUWA-5vTZiPyeMQgNcXRS7P-ZqzYo)
+
 
 We do it dozens, even hundreds of times a day: typing a web address into our browser and hitting Enter. While it feels instant and simple, this action actually triggers a complex chain of events involving many technologies working together.
 
